@@ -13,7 +13,7 @@
               </div>
             </div>
             <div class="panel-body msg_container_base">
-              {{#list-messages}}{{/list-messages}}
+              <ListMessages />
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
   </div>
   {{else}}
     <div class="text-center">
-      {{#chat-username}}{{/chat-username}}
+      <ChatUsername />
     </div>
   {{/if}} 
 </div>
