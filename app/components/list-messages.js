@@ -1,9 +1,9 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import axios from 'npm:axios';
-import Pusher from 'npm:pusher-js';
+import axios from 'axios';
+import Pusher from 'pusher-js';
 
-import config from './config/environment';
+import config from 'ember-chat-app/config/environment';
 
 const SAD_EMOJI = [55357, 56864];
 const HAPPY_EMOJI = [55357, 56832];

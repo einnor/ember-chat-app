@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import strftime from 'npm:strftime';
-import he from 'npm:he';
+import strftime from 'strftime';
+import he from 'he';
 
 export default Component.extend({
   timestamp: computed('message.time', function() {
