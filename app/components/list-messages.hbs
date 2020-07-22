@@ -1,0 +1,13 @@
+{{#each messages as |message|}}
+  <div class="row msg_container base_receive">
+    <ChatMessage message={{message}} />
+  </div>
+{{/each}}
+<div class="panel-footer">
+  <div class="input-group">
+    {{ input value=newMessage id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..."}}
+    <span class="input-group-btn">
+      <button class="btn btn-primary btn-sm" id="btn-chat" {{action "newMessage"}}>Send</button>
+    </span>
+  </div>
+</div>
