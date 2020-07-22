@@ -47,5 +47,10 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.PUSHER_APP_ID=process.env.PUSHER_APP_ID;
+  ENV.PUSHER_APP_KEY=process.env.PUSHER_APP_KEY;
+  ENV.PUSHER_APP_SECRET=process.env.PUSHER_APP_SECRET;
+  ENV.PUSHER_APP_CLUSTER=process.env.PUSHER_APP_CLUSTER;
+
   return ENV;
 };

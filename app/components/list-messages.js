@@ -3,6 +3,8 @@ import { inject as service } from '@ember/service';
 import axios from 'npm:axios';
 import Pusher from 'npm:pusher-js';
 
+import config from './config/environment';
+
 const SAD_EMOJI = [55357, 56864];
 const HAPPY_EMOJI = [55357, 56832];
 const NEUTRAL_EMOJI = [55357, 56848];
@@ -18,8 +20,8 @@ export default Component.extend({
   }),
   init() {
     this._super(...arguments);
-    let pusher = new Pusher('YOUR_APP_KEY', { // update your APP_KEY
-      cluster: 'CLUSTER',
+    let pusher = new Pusher(config.PUSHER_APP_KEY, {
+      cluster: config.PUSHER_APP_CLUSTER,
       encrypted: true
     });
     const channel = pusher.subscribe('chat');
