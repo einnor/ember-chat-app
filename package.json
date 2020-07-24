@@ -44,6 +44,7 @@
     "ember-resolver": "^8.0.0",
     "ember-source": "~3.19.0",
     "ember-template-lint": "^2.8.0",
+    "ember-websockets": "^7.2.0",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^7.1.0",
     "eslint-plugin-ember": "^8.6.0",
@@ -68,6 +69,7 @@
     "pusher": "^3.0.1",
     "pusher-js": "^6.0.3",
     "sentiment": "^5.0.2",
-    "strftime": "^0.10.0"
+    "strftime": "^0.10.0",
+    "ws": "^7.3.1"
   }
 }

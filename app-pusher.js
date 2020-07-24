@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Ensure that your pusher credential are properly set in the .env file  
@@ -31,9 +31,13 @@ app.post('/messages', (req, res) => {
     time: req.body.time,
     sentiment: sentimentScore
   }
+
+  // Trigger message event on the chat channel
   pusher.trigger('chat', 'message', payload);
   res.send(payload)
-})
+});
+
+// Start our server
 app.listen(app.get('port'), () => {
   console.log("Listening on port " + app.get('port'));
 });

@@ -25,17 +25,20 @@ export default Component.extend({
       encrypted: true
     });
     const channel = pusher.subscribe('chat');
-    channel.bind('message', data => {
-      const analysis = data.sentiment > 0 ? HAPPY_EMOJI : (data.sentiment === 0 ? NEUTRAL_EMOJI : SAD_EMOJI);
-      const response = {
-        text: data.text,
-        username: data.username,
-        time: data.time,
-        mood: String.fromCodePoint(...analysis)
-      }
-      this.get('messages').pushObject(response);
-    });
+    channel.bind('message', this.messageHandler, this);
   },
+
+  messageHandler(data) {
+    const analysis = data.sentiment > 0 ? HAPPY_EMOJI : (data.sentiment === 0 ? NEUTRAL_EMOJI : SAD_EMOJI);
+    const response = {
+      text: data.text,
+      username: data.username,
+      time: data.time,
+      mood: String.fromCodePoint(...analysis)
+    }
+    this.get('messages').pushObject(response);
+  },
+
   actions: {
     newMessage() {
       const text = this.get('newMessage');
